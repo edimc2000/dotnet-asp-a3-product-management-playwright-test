@@ -14,7 +14,7 @@ test.describe('Delete Endpoint', () => {
 
                     const response = await request.post(endpoint,
                         {
-                            headers: dev.security_headers,
+                            headers: dev.security_headers_admin,
                             data: addProduct
                         })
                     const responseData = await response.json();
@@ -31,7 +31,7 @@ test.describe('Delete Endpoint', () => {
 
                     const response = await request.delete(`${dev.part3DeleteEndpoint}${i}`,
                         {
-                            headers: dev.security_headers,
+                            headers: dev.security_headers_admin,
                         })
 
                     const responseData = await response.json();
@@ -54,13 +54,13 @@ test.describe('Delete Endpoint', () => {
     })
 
     test.describe(' HTTP 400', () => {
-        test.only('TC 41: Delete using a non parsable input 201a',
+        test('TC 41: Delete using a non parsable input 201a',
             async ({ request }) => {
 
                 const id = "201a"
                 const response = await request.delete(`${dev.part3DeleteEndpoint}${id}`,
                     {
-                        headers: dev.security_headers
+                        headers: dev.security_headers_admin
                     })
                 const responseData = await response.json();
                 const products = responseData.data;
@@ -82,12 +82,12 @@ test.describe('Delete Endpoint', () => {
     })
 
     test.describe('HTTP 404', () => {
-        test.only('TC 42: Delete a non existent account (parsable number)',
+        test('TC 42: Delete a non existent account (parsable number)',
             async ({ request }) => {
                 const id = "2000"
                 const response = await request.delete(`${dev.part3DeleteEndpoint}${id}`,
                     {
-                        headers: dev.security_headers
+                        headers: dev.security_headers_admin
                     })
                 const responseData = await response.json();
                 const products = responseData.data;
@@ -109,12 +109,12 @@ test.describe('Delete Endpoint', () => {
     })
 
         test.describe('HTTP 403', () => {
-        test.only('TC 43: Delete a non existent account (parsable number)',
+        test('TC 43: Delete a non existent account (parsable number)',
             async ({ request }) => {
                 const id = "101" //restricted id on the code
                 const response = await request.delete(`${dev.part3DeleteEndpoint}${id}`,
                     {
-                        headers: dev.security_headers
+                        headers: dev.security_headers_admin
                     })
                 const responseData = await response.json();
                 const products = responseData.data;

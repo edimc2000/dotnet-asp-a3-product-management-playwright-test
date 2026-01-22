@@ -13,7 +13,7 @@ test.describe('Search by productId Endpoint', () => {
                     const productId = test_data.seedData[i].productId
                     const endpoint = `${dev.part3Endpoint}${productId}`
                     const response = await request.get(`${endpoint}`,
-                        { headers: dev.security_headers, })
+                        { headers: dev.security_headers_admin, })
                     const responseData: test_data.ProductResponsePart3 = await response.json();
                     const products = responseData.data;
 
@@ -46,7 +46,7 @@ test.describe('Search by productId Endpoint', () => {
                 const productId = '20111a'
                 const endpoint = `${dev.part3Endpoint}${productId}`
                 const response = await request.get(`${endpoint}`,
-                    { headers: dev.security_headers, })
+                    { headers: dev.security_headers_admin, })
                 const responseData: test_data.ProductResponsePart3 = await response.json();
                 dev.divider()
                 console.log('Response Status:', response.status())
@@ -92,7 +92,7 @@ test.describe('Search by productId Endpoint', () => {
                 const endpoint = `${dev.part3Endpoint}${productId}`
 
                 const response = await request.get(`${endpoint}`,
-                    { headers: dev.security_headers, })
+                    { headers: dev.security_headers_admin, })
                 const responseData: test_data.ProductResponsePart3 = await response.json();
                 dev.divider()
                 console.log('Response Status:', response.status())
@@ -117,7 +117,7 @@ test.describe('Search by productId Endpoint', () => {
                 const endpoint = `${dev.part3Endpoint}${productId}`
 
                 const response = await request.put(`${endpoint}`,
-                    { headers: dev.security_headers, })
+                    { headers: dev.security_headers_admin, })
 
                 dev.divider()
                 console.log('Response Status:', response.status())

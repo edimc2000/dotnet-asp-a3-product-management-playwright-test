@@ -11,7 +11,7 @@ test.describe('Search all Endpoint', () => {
                 const endpoint = `${dev.part3Endpoint}`
 
                 const response = await request.get(endpoint,
-                    { headers: dev.security_headers, })
+                    { headers: dev.security_headers_admin, })
                 const responseData: test_data.ProductResponsePart3 = await response.json();
                 const products = responseData.data;
 

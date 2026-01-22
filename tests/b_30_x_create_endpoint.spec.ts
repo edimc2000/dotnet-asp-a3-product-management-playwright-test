@@ -15,7 +15,7 @@ test.describe('Create Endpoint', () => {
 
                     const response = await request.post(endpoint,
                         {
-                            headers: dev.security_headers,
+                            headers: dev.security_headers_admin,
                             data: addProduct
                         })
                     const responseData = await response.json();
@@ -60,7 +60,7 @@ test.describe('Create Endpoint', () => {
 
                     const response = await request.delete(`${dev.part3DeleteEndpoint}${i}`,
                         {
-                            headers: dev.security_headers,
+                            headers: dev.security_headers_admin,
                         })
 
                     const responseData = await response.json();
@@ -82,7 +82,7 @@ test.describe('Create Endpoint', () => {
 
                 const response = await request.post(endpoint,
                     {
-                        headers: dev.security_headers,
+                        headers: dev.security_headers_admin,
                         data: test_data.validationTestData.emptyName.data
                     })
 
@@ -112,7 +112,7 @@ test.describe('Create Endpoint', () => {
             async ({ request }) => {
                 const response = await request.post(endpoint,
                     {
-                        headers: dev.security_headers,
+                        headers: dev.security_headers_admin,
                         data: test_data.validationTestData.nameTooShort.data
                     })
 
@@ -139,7 +139,7 @@ test.describe('Create Endpoint', () => {
             async ({ request }) => {
                 const response = await request.post(endpoint,
                     {
-                        headers: dev.security_headers,
+                        headers: dev.security_headers_admin,
                         data: test_data.validationTestData.nameTooLong.data
                     })
 
@@ -164,7 +164,7 @@ test.describe('Create Endpoint', () => {
             async ({ request }) => {
                 const response = await request.post(endpoint,
                     {
-                        headers: dev.security_headers,
+                        headers: dev.security_headers_admin,
                         data: test_data.validationTestData.emptyDescription.data
                     })
 
@@ -190,7 +190,7 @@ test.describe('Create Endpoint', () => {
             async ({ request }) => {
                 const response = await request.post(endpoint,
                     {
-                        headers: dev.security_headers,
+                        headers: dev.security_headers_admin,
                         data: test_data.validationTestData.descriptionTooShort.data
                     })
 
@@ -215,7 +215,7 @@ test.describe('Create Endpoint', () => {
             async ({ request }) => {
                 const response = await request.post(endpoint,
                     {
-                        headers: dev.security_headers,
+                        headers: dev.security_headers_admin,
                         data: test_data.validationTestData.descriptionTooLong.data
                     })
 
@@ -240,7 +240,7 @@ test.describe('Create Endpoint', () => {
             async ({ request }) => {
                 const response = await request.post(endpoint,
                     {
-                        headers: dev.security_headers,
+                        headers: dev.security_headers_admin,
                         data: test_data.validationTestData.negativePrice.data
                     })
 
@@ -265,7 +265,7 @@ test.describe('Create Endpoint', () => {
             async ({ request }) => {
                 const response = await request.post(endpoint,
                     {
-                        headers: dev.security_headers,
+                        headers: dev.security_headers_admin,
                         data: test_data.validationTestData.priceTooHigh.data
                     })
 
@@ -290,7 +290,7 @@ test.describe('Create Endpoint', () => {
             async ({ request }) => {
                 const response = await request.post(endpoint,
                     {
-                        headers: dev.security_headers,
+                        headers: dev.security_headers_admin,
                         data: test_data.validationTestData.unparsablePrice.data
                     })
 
@@ -315,7 +315,7 @@ test.describe('Create Endpoint', () => {
             async ({ request }) => {
                 const response = await request.post(endpoint,
                     {
-                        headers: dev.security_headers,
+                        headers: dev.security_headers_admin,
                         data: test_data.validationTestData.missingPrice.data
                     })
 
@@ -340,7 +340,7 @@ test.describe('Create Endpoint', () => {
             async ({ request }) => {
                 const response = await request.post(endpoint,
                     {
-                        headers: dev.security_headers,
+                        headers: dev.security_headers_admin,
                         data: test_data.validationTestData.allFieldsInvalid.data
                     })
 
@@ -366,7 +366,7 @@ test.describe('Create Endpoint', () => {
 
                 const response = await request.post(endpoint,
                     {
-                        headers: dev.security_headers,
+                        headers: dev.security_headers_admin,
                     })
 
                 const responseData = await response.json();
@@ -398,7 +398,7 @@ test.describe('Create Endpoint', () => {
 
                 const response = await request.post(endpoint,
                     {
-                        headers: dev.security_headers,
+                        headers: dev.security_headers_admin,
                         data: test_data.malformedJSON
                     })
 

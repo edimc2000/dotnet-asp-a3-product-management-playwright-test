@@ -3,7 +3,7 @@ import { Product, ApiResult, ProductResponse, AccountResponse } from './ApiInter
 import * as dev from '../dev_environment'
 import * as test_data from '../test_data_part31';
 
-test.describe('Delete Endpoint', () => {
+test.describe('Authentication', () => {
     const endpoint = `${dev.part3Endpoint}`
     test.describe('HTTP 401', () => {
         test('TC 50: Register without token for authentication',
@@ -56,6 +56,25 @@ test.describe('Delete Endpoint', () => {
                 expect.soft(response.statusText()).toEqual('Unauthorized')
             });
     })
+    test.describe('HTTP 403', () => {
+        test('TC 53: Register with a user token for authentication',
+            async ({ request }) => {
+                const addProduct = test_data.testAddProducts[0]
+                const response = await request.post(`${endpoint}`,
+                    {
+                        headers: dev.security_headers_user,
+                        data: addProduct
+                    }
+                )
+                dev.divider()
+                console.log('Response Status:', response.status())
+                console.log('Response Status Text:', response.statusText())
+
+                //validate HTTP response code and text and location header
+                expect.soft(response.status()).toEqual(403)
+                expect.soft(response.statusText()).toEqual('Forbidden')
+            });
 
 
+    })
 })

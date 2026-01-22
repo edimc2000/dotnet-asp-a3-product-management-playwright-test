@@ -10,8 +10,16 @@ export const deleteUsingIdEndpointUrl = '/account/delete/id/'
 export const part3Endpoint = `${part3BaseURL}/api/products/`
 export const part3DeleteEndpoint = `${part3BaseURL}/api/delete/`
 
-export const random_sys_token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkFkbWluIiwic3ViIjoiQWRtaW4iLCJqdGkiOiIxODkxOTQ0OCIsImF1ZCI6WyJodHRwOi8vbG9jYWxob3N0OjUxOTciLCJodHRwczovL2xvY2FsaG9zdDo3MDQ3Il0sIm5iZiI6MTc2ODk0ODI2MywiZXhwIjoxNzc2NzI0MjYzLCJpYXQiOjE3Njg5NDgyNjMsImlzcyI6ImRvdG5ldC11c2VyLWp3dHMifQ.XdefSVK6dRLer8nD9i0gVf8dqbqcpLCw6jWpJ7sWpvU'
+//update this
+export const token_admin = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsInVzZXJJZCI6IjEiLCJqdGkiOiIzYjA0MTAzZS0zZGE1LTQ5M2YtOGYzZC04YzEyODVjYTcyY2QiLCJpYXQiOjE3NjkwNTQ5OTgsImV4cCI6MTc2OTA2MjE5OCwiaXNzIjoibWluaW1hbC1hcGkiLCJhdWQiOiJhcGktdXNlcnMifQ.yxugJp-QeLtERcUXSW9bZeKoGp82uuqnHRlAxtJOQD8'
 
-export const security_headers = {
-     'Authorization': `Bearer ${random_sys_token}`,
+export const security_headers_admin = {
+     'Authorization': `Bearer ${token_admin}`,
+}
+
+//update this
+export const token_user = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoidXNlciIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlVzZXIiLCJ1c2VySWQiOiIyIiwianRpIjoiMDYzOTBhMGYtNTE2Ny00ODE5LTgzZDEtYTdjNWNiOTIwZDlmIiwiaWF0IjoxNzY5MDU1NTMwLCJleHAiOjE3NjkwNjI3MzAsImlzcyI6Im1pbmltYWwtYXBpIiwiYXVkIjoiYXBpLXVzZXJzIn0.FXrIQwnjwWpkp29GjDSBKrTzUrpHErZgERV3KhF_2Sk'
+
+export const security_headers_user = {
+     'Authorization': `Bearer ${token_user}`,
 }
