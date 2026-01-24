@@ -57,7 +57,7 @@ test.describe('Authentication', () => {
             });
     })
     test.describe('HTTP 403', () => {
-        test('TC 53: Register with a user token for authentication',
+        test('TC 53: Register with a user(readonly) token for authentication',
             async ({ request }) => {
                 const addProduct = test_data.testAddProducts[0]
                 const response = await request.post(`${endpoint}`,
